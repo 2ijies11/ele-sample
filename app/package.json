@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --ia32"
+  },
+  "build": {
+    "appId": "com.example.k.app",
+    "asar": false,
+    "win": {
+      "target": "zip"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [],
+    "extraResources": []
+  }
+}

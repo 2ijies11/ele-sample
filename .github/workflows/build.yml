@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: setup nodejs
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: install and build vm
+      run: |
+        cd app
+        yarn --frozen-lock
+        yarn build
+        ls
