@@ -3,6 +3,10 @@ name: Build
 on:
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./app
+
 jobs:
   build:
 
@@ -28,11 +32,10 @@ jobs:
 
     - name: Install Dependency
       if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
-      run: |
-        cd app
-        yarn --frozen-lockfile
-        yarn build
-        ls dist
+      run: yarn --frozen-lockfile
+    
+    - name: Build
+      run: yarn build
 
     - uses: actions/upload-artifact@v6
       with:
