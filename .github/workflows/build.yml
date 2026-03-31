@@ -20,6 +20,12 @@ jobs:
     - name: install and build vm
       run: |
         cd app
-        yarn --frozen-lock
+        yarn --frozen-lockfile
         yarn build
         ls
+
+    - uses: actions/upload-artifact@v6
+      with:
+        name:
+        path: |
+          dist
