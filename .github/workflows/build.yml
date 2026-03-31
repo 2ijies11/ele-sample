@@ -10,12 +10,12 @@ jobs:
 
     steps:
     - name: setup nodejs
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: 22
 
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: install and build vm
       run: |
@@ -26,6 +26,5 @@ jobs:
 
     - uses: actions/upload-artifact@v6
       with:
-        name:
-        path: |
-          dist
+        name: app
+        path: dist/app-1.0.0-ia32-win.zip
