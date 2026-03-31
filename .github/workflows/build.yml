@@ -27,4 +27,4 @@ jobs:
     - uses: actions/upload-artifact@v6
       with:
         name: app
-        path: dist/app-1.0.0-ia32-win.zip
+        path: app/dist/app-1.0.0-ia32-win.zip
