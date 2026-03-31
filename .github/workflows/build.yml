@@ -27,4 +27,5 @@ jobs:
     - uses: actions/upload-artifact@v6
       with:
         name: app
+        compression-level: 0
         path: app/dist/app-1.0.0-ia32-win.zip
